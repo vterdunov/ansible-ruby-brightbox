@@ -1,0 +1,27 @@
+- name: set brightbox ruby repository
+  apt_repository: repo="ppa:brightbox/ruby-ng"
+
+- name: Install packages
+  apt: name={{ item }} update_cache=yes state=present
+  with_items:
+    - build-essential
+    - libxml2-dev
+    - libxslt1-dev
+    - libssl-dev
+    - zlib1g-dev
+    - nodejs
+    - curl
+    - wget
+    - ruby{{ ruby_version }}
+
+- name: Dont install gem docs
+  lineinfile: "dest=/etc/gemrc line='gem: --no-ri --no-rdoc' create=yes"
+
+- name: Check bundler is installed or not
+  shell: bundle -v
+  register: bundler_present
+  ignore_errors: True
+
+- name: Install bundler if not yet present
+  shell: gem install bundler
+  when: bundler_present|failed
