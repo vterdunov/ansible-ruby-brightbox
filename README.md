@@ -21,7 +21,7 @@ None
 Example Playbook
 ----------------
 ```
-- hosts: servers
+- hosts: all
   roles:
      - { role: ruby_brightbox, ruby_version: 1.9.3 }
 ```
