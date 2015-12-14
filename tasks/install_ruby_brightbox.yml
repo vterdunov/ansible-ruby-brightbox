@@ -27,5 +27,6 @@
 - name: install bundler
   gem:
     name: bundler
-    state: '{{ ruby_brightbox_bundler_version }}'
+    version: '{{ ruby_brightbox_bundler_version }}'
+    state: present
     user_install: no
