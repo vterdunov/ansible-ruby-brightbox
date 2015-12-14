@@ -1,2 +1,3 @@
-user: user
+---
 ruby_version: 1.9.3
+ruby_brightbox_bundler_version: 1.10.6
