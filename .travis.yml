@@ -19,10 +19,9 @@ install:
   - ansible --version
 
   # Add ansible.cfg to pick up roles path.
-  - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
+  - "{ echo '[defaults]'; echo 'roles_path = ../'; echo 'host_key_checking = False' } >> ansible.cfg"
 
 script:
-  - echo
   # Basic role syntax check
   - ansible-playbook travis-tests/test.yml -i travis-tests/inventory --syntax-check
 
