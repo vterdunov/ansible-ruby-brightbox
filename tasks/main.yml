@@ -1,2 +1,3 @@
 ---
 - include: install_ruby_brightbox.yml
+- include: install_bundler.yml

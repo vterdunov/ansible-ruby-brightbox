@@ -1,9 +1,0 @@
-- hosts: '{{ hosts }}'
-  become: yes
-
-  vars_files:
-    - 'defaults/main.yml'
-    - 'files/secret_sudo_pass'
-
-  tasks:
-    - include: tasks/main.yml
