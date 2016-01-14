@@ -18,10 +18,10 @@ install:
   # Check ansible version
   - ansible --version
 
-  # Create ansible.cfg with correct roles_path
-  - printf '[defaults]\nroles_path=../' >ansible.cfg
-
 script:
+  # Create ansible.cfg with correct roles_path
+  - echo '[defaults]\nroles_path=../' > ansible.cfg
+
   # Basic role syntax check
   - ansible-playbook travis-tests/test.yml -i travis-tests/inventory --syntax-check
 

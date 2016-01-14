@@ -1,6 +1,7 @@
 Ruby
 =========
 [![Build Status](https://travis-ci.org/vterdunov/ansible-ruby-brightbox.svg?branch=master)](https://travis-ci.org/vterdunov/ansible-ruby-brightbox)
+
 Эта роль устанавливает Ruby с патчами Brightbox А так же гем bundler.
 
 Requirements
