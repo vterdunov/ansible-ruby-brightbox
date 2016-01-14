@@ -19,7 +19,7 @@ install:
   - ansible --version
 
   # Add ansible.cfg to pick up roles path.
-  - "{ echo '[defaults]'; echo 'roles_path = ../'; echo 'host_key_checking = False' } >> ansible.cfg"
+  - "{ echo '[defaults]'; echo 'roles_path = ../'; echo 'host_key_checking = False'; } >> ansible.cfg"
 
 script:
   # Basic role syntax check
