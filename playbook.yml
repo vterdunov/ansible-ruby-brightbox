@@ -1,0 +1,12 @@
+---
+# tests with default settings
+- hosts: group_1
+  roles:
+    - role: ruby_brightbox
+
+# tests with custom settings
+- hosts: group_2
+  roles:
+    - role: ruby_brightbox
+      ruby_version: 2.2
+      ruby_brightbox_bundler_version: 1.10.6

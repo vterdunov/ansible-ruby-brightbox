@@ -1,0 +1,21 @@
+---
+- name: 'Dont install gem`s docs'
+  lineinfile:
+    dest: '/etc/gemrc'
+    line: 'gem: --no-ri --no-rdoc'
+    create: yes
+
+- name: 'Install bundler (specify version)'
+  gem:
+    name: bundler
+    version: '{{ ruby_brightbox_bundler_version }}'
+    state: present
+    user_install: no
+  when: ruby_brightbox_bundler_version|trim != ''
+
+- name: 'Install bundler (latest version)'
+  gem:
+    name: bundler
+    state: latest
+    user_install: no
+  when: ruby_brightbox_bundler_version|trim == ''
