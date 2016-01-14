@@ -23,7 +23,7 @@ install:
 
 script:
   # Basic role syntax check
-  - ansible-playbook travis-tests/test.yml -i tests/inventory --syntax-check
+  - ansible-playbook travis-tests/test.yml -i travis-tests/inventory --syntax-check
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
