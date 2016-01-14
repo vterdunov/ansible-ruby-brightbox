@@ -18,12 +18,16 @@ install:
   # Check ansible version
   - ansible --version
 
-script:
-  # Create ansible.cfg with correct roles_path
-  - echo '[defaults]\nroles_path=../' > ansible.cfg
+  # Add ansible.cfg to pick up roles path.
+  - "printf '[defaults]\nroles_path = ../' > ansible.cfg"
 
+script:
+  - ansible-galaxy install
   # Basic role syntax check
   - ansible-playbook travis-tests/test.yml -i travis-tests/inventory --syntax-check
+
+  - ansible-playbook travis-tests/test.yml -i travis-tests/inventory --sudo
+  # Run the role/playbook with ansible-playbook.
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
