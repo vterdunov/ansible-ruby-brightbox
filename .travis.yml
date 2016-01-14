@@ -3,7 +3,7 @@ language: python
 python: "2.7"
 
 # Use the new container infrastructure
-sudo: false
+sudo: required
 
 # Install ansible
 addons:
@@ -25,8 +25,8 @@ script:
   # Basic role syntax check
   - ansible-playbook travis-tests/test.yml -i travis-tests/inventory --syntax-check
 
-  - ansible-playbook travis-tests/test.yml -i travis-tests/inventory --sudo
   # Run the role/playbook with ansible-playbook.
+  - ansible-playbook travis-tests/test.yml -i travis-tests/inventory --connection=local --sudo
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
