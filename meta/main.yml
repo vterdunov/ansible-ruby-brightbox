@@ -10,7 +10,6 @@ galaxy_info:
       - trusty
       - utopic
       - vivid
-      - willy
 
   galaxy_tags:
     - ruby
