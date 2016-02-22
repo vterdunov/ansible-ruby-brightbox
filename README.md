@@ -2,7 +2,8 @@ Ruby
 =========
 [![Build Status](https://travis-ci.org/vterdunov/ansible-ruby-brightbox.svg?branch=master)](https://travis-ci.org/vterdunov/ansible-ruby-brightbox)
 
-Эта роль устанавливает Ruby с патчами Brightbox А так же гем bundler.
+This role will install ruby package for Ubuntu. Bundler will also be installed.
+Provided versions: 2.3, 2.2, 2.1, 2.0, 1.9.3, and 1.8.7. Ruby 1.9.3 and 1.8.7 packages are modified with various performance improvements.
 
 Requirements
 ------------
@@ -12,10 +13,10 @@ Role Variables
 --------------
 
 ```
-# версия руби
-ruby_version: 1.9.3
+# ruby version
+ruby_version: 2.3
 
-# версия гема bundler
+# bundler version. empty for latest version.
 ruby_brightbox_bundler_version: 1.10.6
 ```
 
@@ -28,9 +29,8 @@ Example Playbook
 ```
 - hosts: all
   roles:
-     - { role: ruby_brightbox, ruby_version: 1.9.3 }
+     - { role: ruby-brightbox, ruby_version: 2.3 }
 ```
 
 Author Information
 ------------------
-Разработано и протестировано для Ubuntu 14.04 (trusty)
