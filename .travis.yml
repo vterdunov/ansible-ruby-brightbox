@@ -18,15 +18,14 @@ install:
   # Check ansible version
   - ansible --version
 
+  # Install molecule
+  - pip install molecule
+
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'roles_path = ../'; echo 'host_key_checking = False'; } >> ansible.cfg"
 
 script:
-  # Basic role syntax check
-  - ansible-playbook travis-tests/test.yml -i travis-tests/inventory --syntax-check
-
-  # Run the role/playbook with ansible-playbook.
-  - ansible-playbook travis-tests/test.yml -i travis-tests/inventory --connection=local --sudo
+  - molecule test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

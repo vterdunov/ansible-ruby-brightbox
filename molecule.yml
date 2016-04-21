@@ -1,6 +1,6 @@
 ---
 # role specific overrides for molecule's config options. These will override ALL other config files.
-# molecule:
+molecule:
 #   # directory in CWD to place all temp files, etc.
 #   molecule_dir: .molecule
 
@@ -21,7 +21,7 @@
 #   serverspec_dir: spec
 
 #   # directory to look for testinfra tests
-#   testinfra_dir: tests
+  testinfra_dir: ''
 
 #   # template files to load when creating corresponding temporary files
 #   # this would be a good place to specify your own ansible.cfg template, for example
